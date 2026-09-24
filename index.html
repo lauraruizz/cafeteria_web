@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cafeteria da Lau — cafés especiais, doces artesanais e momentos acolhedores.">
+    <title>Cafeteria da Lau</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <style>
+        :root {
+            --coffee: #3b2118;
+            --coffee-light: #8d5a3b;
+            --cream: #fffaf4;
+            --caramel: #c9854b;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { background: var(--cream); color: var(--coffee); }
+        .navbar { background: rgba(59, 33, 24, .97); }
+        .navbar-brand { letter-spacing: .04em; }
+        .nav-link { color: rgba(255,255,255,.78) !important; transition: color .2s ease; }
+        .nav-link:hover, .nav-link.active { color: #f3c894 !important; }
+        .hero-carousel img { height: min(68vh, 620px); min-height: 390px; object-fit: cover; filter: brightness(.62); }
+        .carousel-caption { bottom: 18%; text-shadow: 0 2px 18px rgba(0,0,0,.7); }
+        .carousel-caption h1 { font-size: clamp(2.2rem, 5vw, 4.8rem); font-weight: 700; }
+        .carousel-caption p { font-size: clamp(1rem, 2vw, 1.3rem); }
+        .section-heading { max-width: 650px; }
+        .coffee-card { border: 0; border-radius: 1.25rem; overflow: hidden; box-shadow: 0 12px 30px rgba(59,33,24,.1); transition: transform .25s ease, box-shadow .25s ease; }
+        .coffee-card:hover { transform: translateY(-7px); box-shadow: 0 18px 38px rgba(59,33,24,.18); }
+        .coffee-card img { height: 235px; object-fit: cover; }
+        .price { color: var(--coffee-light); font-weight: 700; }
+        .btn-coffee { background: var(--caramel); border: 0; color: #fff; }
+        .btn-coffee:hover { background: var(--coffee-light); color: #fff; }
+        .feature { background: #f4e6d5; border-radius: 1.5rem; }
+        footer { background: var(--coffee); color: #f9ede1; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Navegação principal">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#home">☕ Cafeteria da Lau</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto gap-lg-3">
+                        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#produto">Produto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#pedidos">Pedidos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="home">
+        <section id="carouselCafe" class="carousel slide hero-carousel" data-bs-ride="carousel" aria-label="Destaques da cafeteria">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselCafe" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselCafe" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselCafe" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=85" class="d-block w-100" alt="Xícara de café sobre uma mesa de madeira">
+                    <div class="carousel-caption text-start">
+                        <p class="text-uppercase fw-semibold mb-2">Seu momento começa aqui</p>
+                        <h1>Um café feito para desacelerar.</h1>
+                        <p>Grãos selecionados, receitas artesanais e muito carinho em cada xícara.</p>
+                        <a href="#produto" class="btn btn-coffee rounded-pill px-4 py-2">Conheça nosso menu</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1800&q=85" class="d-block w-100" alt="Café latte servido em xícara branca">
+                    <div class="carousel-caption">
+                        <h2>Sabores que abraçam</h2>
+                        <p>Do espresso intenso ao latte cremoso, encontre seu favorito.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1800&q=85" class="d-block w-100" alt="Ambiente aconchegante de uma cafeteria">
+                    <div class="carousel-caption text-end">
+                        <h2>Seu novo lugar favorito</h2>
+                        <p>Um espaço acolhedor para conversar, criar e saborear.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCafe" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselCafe" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Próximo</span></button>
+        </section>
+
+        <section id="produto" class="container py-5 my-lg-4">
+            <div class="section-heading text-center mx-auto mb-5">
+                <span class="text-uppercase small fw-bold" style="color: var(--caramel);">Feito com paixão</span>
+                <h2 class="display-6 fw-bold mt-2">Escolha seu momento de café</h2>
+                <p class="text-secondary">Opções especiais para deixar o seu dia mais gostoso.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4"><article class="card coffee-card h-100"><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Espresso em uma xícara pequena" loading="lazy"><div class="card-body p-4"><h3 class="h5 fw-bold">Espresso clássico</h3><p class="text-secondary">Intenso, aromático e extraído na medida certa.</p><span class="price">R$ 7,90</span></div></article></div>
+                <div class="col-md-4"><article class="card coffee-card h-100"><img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Café latte com espuma de leite" loading="lazy"><div class="card-body p-4"><h3 class="h5 fw-bold">Latte da Lau</h3><p class="text-secondary">Espresso suave, leite vaporizado e carinho.</p><span class="price">R$ 12,90</span></div></article></div>
+                <div class="col-md-4"><article class="card coffee-card h-100"><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Café e grãos torrados" loading="lazy"><div class="card-body p-4"><h3 class="h5 fw-bold">Café coado especial</h3><p class="text-secondary">Notas marcantes e aroma de grãos selecionados.</p><span class="price">R$ 10,90</span></div></article></div>
+            </div>
+        </section>
+
+        <section id="pedidos" class="container pb-5"><div class="feature p-4 p-md-5 d-md-flex align-items-center justify-content-between gap-4"><div><h2 class="h3 fw-bold">Seu café favorito está a um clique</h2><p class="mb-md-0 text-secondary">Faça seu pedido e retire na cafeteria ou receba onde estiver.</p></div><a href="mailto:pedidos@cafeteriadalau.com" class="btn btn-coffee rounded-pill px-4 mt-3 mt-md-0">Fazer pedido</a></div></section>
+    </main>
+
+    <footer class="py-4"><div class="container text-center"><p class="mb-1 fw-semibold">Cafeteria da Lau</p><small>Um grão de carinho em cada xícara.</small></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+
+</html>
